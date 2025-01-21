@@ -2,21 +2,21 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../styles/Demo.css"; // Keep your custom styles
+import "../styles/Demo.css";
 
 function Demo() {
   // Slick carousel settings
   const settings = {
-    dots: true,          // Show navigation dots
-    infinite: true,     // Disable infinite looping
-    speed: 500,         // Transition speed
-    slidesToShow: 1,    // Show one video at a time
-    slidesToScroll: 1,  // Scroll one video at a time
-    autoplay: false,     // Disable auto-rotation
-    arrows: true,        // Keep navigation arrows
-    draggable: true,     // Allow manual dragging
-    swipe: true,         // Enable swiping on touch devices
-    pauseOnHover: true,  // Prevent unwanted changes when hovering
+    dots: true,    
+    infinite: true,     
+    speed: 500,      
+    slidesToShow: 1,    
+    slidesToScroll: 1,  
+    autoplay: false,     
+    arrows: true,       
+    draggable: true,    
+    swipe: true,         
+    pauseOnHover: true,  
   };
 
   return (
