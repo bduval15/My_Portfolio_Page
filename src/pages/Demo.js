@@ -32,6 +32,16 @@ function Demo() {
             title="Web App Preview"
           ></iframe>
         </div>
+
+        {/*Notefy: Web App */}
+        <div className="webapp-container-2">
+          <h2 className="carousel-title">Naruto Fan Page</h2>
+          <iframe
+            src="http://bduval15.naruto.io/"
+            className="webapp-iframe"
+            title="Web App Preview"
+          ></iframe>
+        </div>
         
         {/* 🎬 Video Section */}
         <div className="video-section">
@@ -41,7 +51,27 @@ function Demo() {
           <Slider {...settings} className="video-carousel">
             <div className="video-wrapper">
               <video className="carousel-video" controls>
-                <source src="/assets/videos/5am.mp4" type="video/mp4" />
+                <source src="/assets/videos/NextTime.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/Find_You.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/Warp_Drive.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/Running.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/MidnightFlights.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="video-wrapper">
@@ -54,6 +84,27 @@ function Demo() {
                 <source src="/assets/videos/After_Hours.mp4" type="video/mp4" />
               </video>
             </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/5am.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/Iwaly.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/Nexus.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/Long_Term.mp4" type="video/mp4" />
+              </video>
+            </div>
+
           </Slider>
 
           {/* 🎼 Sound Design */}

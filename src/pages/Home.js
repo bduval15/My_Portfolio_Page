@@ -24,23 +24,36 @@ function Home() {
     function drawMatrix() {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      ctx.fillStyle = '#0F0'; // Green matrix color
+  
       ctx.font = `${fontSize}px monospace`;
+  
+      const cutoffY = canvas.height / 3;
+      const cutoff = canvas.height / 3;
 
       for (let i = 0; i < drops.length; i++) {
-        const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
+          const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+          const x = i * fontSize;
+          const y = drops[i] * fontSize;
+  
+          let gradientFactor = 0;
 
-        ctx.fillText(text, x, y);
-
-        if (y > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
+          if(y > cutoffY) {
+            gradientFactor = (y - cutoff) / (canvas.height - cutoffY);
+          }
+          let r = Math.round(117 + gradientFactor * (255 - 117)); // 117 → 255 (grey to pink)
+          let g = Math.round((1 - gradientFactor) * 87);          // 87 → 0 (grey to pink)
+          let b = Math.round(104 + gradientFactor * (127 - 104));
+  
+          ctx.fillStyle = `rgb(${r}, ${g}, ${b})`; 
+          ctx.fillText(text, x, y);
+  
+          if (y > canvas.height && Math.random() > 0.975) {
+              drops[i] = 0;
+          }
+          drops[i]++;
       }
-    }
+  }
+  
 
     const interval = setInterval(drawMatrix, 50);
 
