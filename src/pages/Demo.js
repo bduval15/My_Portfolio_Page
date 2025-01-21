@@ -7,81 +7,83 @@ import "../styles/Demo.css";
 function Demo() {
   // Slick carousel settings
   const settings = {
-    dots: true,    
-    infinite: true,     
-    speed: 500,      
-    slidesToShow: 1,    
-    slidesToScroll: 1,  
-    autoplay: false,     
-    arrows: true,       
-    draggable: true,    
-    swipe: true,         
-    pauseOnHover: true,  
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    arrows: true,
+    draggable: true,
+    swipe: true,
+    pauseOnHover: true,
   };
 
   return (
     <section className="demo-section">
-      <h2 className="section-title">Live Demos</h2>
-      <p>Here are some interactive demos of my projects:</p>
+      <h1 className="page-title"></h1>
 
-      {/* Video Carousel */}
-      <Slider {...settings} className="video-carousel">
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/5am.mp4" type="video/mp4" />
-          </video>
+      {/* Container for side-by-side carousels */}
+      <div className="carousel-container">
+        {/* Music Video Carousel */}
+        <div className="carousel-box">
+          <h2 className="carousel-title">Music Videos</h2>
+          <Slider {...settings} className="video-carousel">
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/5am.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/1234.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/After_Hours.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/Find_You.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/Iwaly.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </Slider>
         </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/1234.mp4" type="video/mp4" />
-          </video>
+
+        {/* Sound Design Carousel */}
+        <div className="carousel-box">
+          <h2 className="carousel-title">Sound Design</h2>
+          <Slider {...settings} className="video-carousel">
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/sound1.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/sound2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/sound3.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="video-wrapper">
+              <video className="carousel-video" controls>
+                <source src="/assets/videos/sound4.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </Slider>
         </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/After_Hours.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/Find_You.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/Iwaly.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/Long_Term.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/MidnightFlights.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/NextTime.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/Nexus.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/Running.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div className="video-wrapper">
-          <video className="carousel-video" controls>
-            <source src="/assets/videos/Warp_Drive.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </Slider>
+      </div>
     </section>
   );
 }
