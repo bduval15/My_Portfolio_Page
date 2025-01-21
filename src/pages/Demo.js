@@ -7,26 +7,34 @@ import "../styles/Demo.css";
 function Demo() {
   // Slick carousel settings
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    arrows: true,
-    draggable: true,
-    swipe: true,
-    pauseOnHover: true,
+    dots: true,    
+    infinite: true,     
+    speed: 500,      
+    slidesToShow: 1,    
+    slidesToScroll: 1,  
+    autoplay: false,     
+    arrows: true,       
+    draggable: true,    
+    swipe: true,         
+    pauseOnHover: true,  
   };
 
   return (
     <section className="demo-section">
-      <h1 className="page-title"></h1>
+      <div className="demo-container">
 
-      {/* Container for side-by-side carousels */}
-      <div className="carousel-container">
-        {/* Music Video Carousel */}
-        <div className="carousel-box">
+        {/* 🌍 Notefy: Web App */}
+        <div className="webapp-container">
+          <h2 className="carousel-title">NotEFY Live Preview</h2>
+          <iframe
+            src="https://notefy-39045.web.app/"
+            className="webapp-iframe"
+            title="Web App Preview"
+          ></iframe>
+        </div>
+        
+        {/* 🎬 Left Side: Videos */}
+        <div className="video-container">
           <h2 className="carousel-title">Music Videos</h2>
           <Slider {...settings} className="video-carousel">
             <div className="video-wrapper">
@@ -44,6 +52,10 @@ function Demo() {
                 <source src="/assets/videos/After_Hours.mp4" type="video/mp4" />
               </video>
             </div>
+          </Slider>
+
+          <h2 className="carousel-title">Sound Design</h2>
+          <Slider {...settings} className="video-carousel">
             <div className="video-wrapper">
               <video className="carousel-video" controls>
                 <source src="/assets/videos/Find_You.mp4" type="video/mp4" />
@@ -57,32 +69,7 @@ function Demo() {
           </Slider>
         </div>
 
-        {/* Sound Design Carousel */}
-        <div className="carousel-box">
-          <h2 className="carousel-title">Sound Design</h2>
-          <Slider {...settings} className="video-carousel">
-            <div className="video-wrapper">
-              <video className="carousel-video" controls>
-                <source src="/assets/videos/sound1.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="video-wrapper">
-              <video className="carousel-video" controls>
-                <source src="/assets/videos/sound2.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="video-wrapper">
-              <video className="carousel-video" controls>
-                <source src="/assets/videos/sound3.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="video-wrapper">
-              <video className="carousel-video" controls>
-                <source src="/assets/videos/sound4.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </Slider>
-        </div>
+        
       </div>
     </section>
   );
