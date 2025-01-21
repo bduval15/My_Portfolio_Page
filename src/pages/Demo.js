@@ -37,7 +37,7 @@ function Demo() {
         <div className="webapp-container-2">
           <h2 className="carousel-title">Naruto Fan Page</h2>
           <iframe
-            src="http://bduval15.naruto.io/"
+            src="https://naruto-fan-page-1az0.onrender.com/"
             className="webapp-iframe"
             title="Web App Preview"
           ></iframe>
