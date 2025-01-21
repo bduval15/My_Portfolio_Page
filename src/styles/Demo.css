@@ -1,0 +1,44 @@
+.demo-section {
+    text-align: center;
+    padding: 2rem;
+    background: #0f0e17; /* Dark synthwave theme */
+    color: #ffffff;
+  }
+  
+  /* Carousel container */
+  .video-carousel {
+    width: 70%; /* Adjust width to ensure proper scaling */
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* Video container maintains aspect ratio */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Aspect ratio 16:9 */
+    overflow: hidden;
+    border-radius: 10px;
+    background: black; /* Adds a background to avoid letterboxing gaps */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Ensures video fits properly without cutting off content */
+  .carousel-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps full video visible without cropping */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .video-carousel {
+      width: 90%;
+    }
+  }
+  

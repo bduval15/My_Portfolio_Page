@@ -1,0 +1,36 @@
+.contact-section {
+    background-color: #0f0e17;
+    color: #ffffff;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 5px #ff0080, 0 0 15px #ff0080;
+    color: #ff0080;
+  }
+  
+  /* Reuse .btn-neon from Home.css if you prefer, or redefine */
+  .btn-neon {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    color: #00fff0;
+    border: 2px solid #00fff0;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 0 8px #00fff0;
+  }
+  
+  .btn-neon:hover {
+    background-color: #00fff0;
+    color: #0f0e17;
+    box-shadow: 0 0 12px #00fff0;
+  }
+  

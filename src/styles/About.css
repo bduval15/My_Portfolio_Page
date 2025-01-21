@@ -1,0 +1,16 @@
+.about-section {
+    background-color: #0f0e17;
+    color: #ffffff;
+    padding: 4rem 1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 5px #ff0080, 0 0 15px #ff0080;
+    color: #ff0080;
+  }
+  
