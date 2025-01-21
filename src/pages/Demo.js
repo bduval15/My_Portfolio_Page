@@ -23,7 +23,7 @@ function Demo() {
     <section className="demo-section">
       <div className="demo-container">
 
-        {/* 🌍 Notefy: Web App */}
+        {/*Notefy: Web App */}
         <div className="webapp-container">
           <h2 className="carousel-title">NotEFY Live Preview</h2>
           <iframe
@@ -33,8 +33,10 @@ function Demo() {
           ></iframe>
         </div>
         
-        {/* 🎬 Left Side: Videos */}
-        <div className="video-container">
+        {/* 🎬 Video Section */}
+        <div className="video-section">
+          
+          {/* 🎵 Music Videos */}
           <h2 className="carousel-title">Music Videos</h2>
           <Slider {...settings} className="video-carousel">
             <div className="video-wrapper">
@@ -54,6 +56,7 @@ function Demo() {
             </div>
           </Slider>
 
+          {/* 🎼 Sound Design */}
           <h2 className="carousel-title">Sound Design</h2>
           <Slider {...settings} className="video-carousel">
             <div className="video-wrapper">
@@ -67,9 +70,8 @@ function Demo() {
               </video>
             </div>
           </Slider>
+          
         </div>
-
-        
       </div>
     </section>
   );

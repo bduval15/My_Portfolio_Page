@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import '../styles/NavBar.css'; // your nav-specific styles
 
 function NavBar() {
-  // useLocation() to figure out which link is active
   const location = useLocation();
 
   return (
@@ -18,16 +17,16 @@ function NavBar() {
         </li>
         <li>
           <Link 
-            to="/about" 
-            className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>
-            About
+            to="/demo" 
+            className={`nav-link ${location.pathname === '/demo' ? 'active' : ''}`}>
+            Demo
           </Link>
         </li>
         <li>
           <Link 
-            to="/demo" 
-            className={`nav-link ${location.pathname === '/demo' ? 'active' : ''}`}>
-            Demo
+            to="/about" 
+            className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>
+            About
           </Link>
         </li>
         <li>

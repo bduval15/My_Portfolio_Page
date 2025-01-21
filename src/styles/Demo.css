@@ -1,80 +1,65 @@
-/* 🎬 Main Demo Section */
+/* Main Section */
 .demo-section {
   text-align: center;
   padding: 2rem;
-  background: #0f0e17; 
+  background: #0f0e17;
   color: #ffffff;
 }
 
-/* 🎤 Page Title */
-.page-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #ff00ff; 
-  margin-bottom: 30px;
-  text-shadow: 0px 0px 10px rgba(255, 0, 255, 0.8);
-}
-
-/* 📌 Layout - Web App on Top, Videos Below */
+/* Centered Containers */
 .demo-container {
   display: flex;
-  flex-direction: column; 
-  justify-content: flex-start;
-  align-items: center;
-  gap: 40px;
-  padding: 20px;
-}
-
-/* 🌍 Web App Container */
-.webapp-container {
-  width: 450px; 
-  text-align: center;
-  display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
   align-items: center;
-  height: 918px; 
+  gap: 50px; 
 }
 
-/* 🖥 Web App Iframe (Mimics Mobile) */
+/* 📱 Web App */
+.webapp-container {
+  width: 450px;  
+  height: 918px;
+  margin: 0 auto;
+  transform: scale(0.84);
+  transform-origin: center top;
+}
+
 .webapp-iframe {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
-  border: 3px solid rgba(0, 255, 255, 0.5); 
-  background: black; 
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
 }
 
-/* 📌 Video Container - Stacked Below */
-.video-container {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* 🎞 Video Carousel */
-.video-carousel {
-  width: 90%; 
+/* 🎬 Video Section */
+.video-section {
+  width: 85%;
   max-width: 800px;
-  margin: auto;
+  margin-top: 40px;
 }
 
-/* 🎬 Video Wrapper */
+/* 🎥 Video Carousel */
+.video-carousel {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+/* 🎞️ Video Wrapper */
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; 
+  padding-top: 56.25%;
   overflow: hidden;
   border-radius: 10px;
-  background: black; 
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* 🎥 Video Proper Sizing */
+/* 🎬 Video Display */
 .carousel-video {
   position: absolute;
   top: 0;
@@ -84,18 +69,43 @@
   object-fit: contain;
 }
 
-/* 🎯 Responsive Design for Smaller Screens */
-@media (max-width: 1024px) {
+.carousel-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px; 
+  color: #00ffff;
+  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+  animation: neonPulse 3s infinite ease-in-out;
+}
 
-  .video-container {
+/* Neon Pulse Animation */
+@keyframes neonPulse {
+  0% {
+      text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.7), 0px 0px 16px rgba(0, 255, 255, 0.5);
+      opacity: 1;
+  }
+  50% {
+      text-shadow: 0px 0px 15px rgba(0, 255, 255, 1), 0px 0px 30px rgba(0, 255, 255, 0.8);
+      opacity: 0.9;
+  }
+  100% {
+      text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.7), 0px 0px 16px rgba(0, 255, 255, 0.5);
+      opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .demo-container {
+      width: 100%;
+  }
+
+  .webapp-container {
       width: 90%;
+      height: auto;
   }
 
   .video-carousel {
-      width: 100%;
-  }
-
-  .carousel-box {
-      width: 100%;
+      width: 95%;
   }
 }
