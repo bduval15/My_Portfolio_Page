@@ -1,40 +1,21 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import '../styles/NavBar.css'; // your nav-specific styles
+import '../styles/NavBar.css';
 
-function NavBar() {
-  const location = useLocation();
-
+function NavBar({ setActiveSection }) {
   return (
     <nav className="navbar">
       <ul className="nav-links">
         <li>
-          <Link 
-            to="/" 
-            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
-            Home
-          </Link>
+          <a href="#" onClick={() => setActiveSection(null)} className="nav-link">Home</a>
         </li>
         <li>
-          <Link 
-            to="/demo" 
-            className={`nav-link ${location.pathname === '/demo' ? 'active' : ''}`}>
-            Demo
-          </Link>
+          <a href="#" onClick={() => setActiveSection("demo")} className="nav-link">Demo</a>
         </li>
         <li>
-          <Link 
-            to="/about" 
-            className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>
-            About
-          </Link>
+          <a href="#" onClick={() => setActiveSection("about")} className="nav-link">About</a>
         </li>
         <li>
-          <Link 
-            to="/contact" 
-            className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
-            Contact
-          </Link>
+          <a href="#" onClick={() => setActiveSection("contact")} className="nav-link">Contact</a>
         </li>
       </ul>
     </nav>

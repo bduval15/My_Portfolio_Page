@@ -7,16 +7,16 @@ import "../styles/Demo.css";
 function Demo() {
   // Slick carousel settings
   const settings = {
-    dots: true,    
-    infinite: true,     
-    speed: 500,      
-    slidesToShow: 1,    
-    slidesToScroll: 1,  
-    autoplay: false,     
-    arrows: true,       
-    draggable: true,    
-    swipe: true,         
-    pauseOnHover: true,  
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    arrows: true,
+    draggable: true,
+    swipe: true,
+    pauseOnHover: true,
   };
 
   return (
@@ -33,19 +33,21 @@ function Demo() {
           ></iframe>
         </div>
 
-        {/*Notefy: Web App */}
-        <div className="webapp-container-2">
+        {/* Naruto: Web App */}
+        <div className="webapp-wrapper">
           <h2 className="carousel-title">Naruto Fan Page</h2>
-          <iframe
-            src="https://naruto-fan-page-1az0.onrender.com/"
-            className="webapp-iframe"
-            title="Web App Preview"
-          ></iframe>
+          <div className="webapp-container-2">
+            <iframe
+              src="https://naruto-fan-page-sable.vercel.app/"
+              className="webapp-iframe-2"
+              title="Web App Preview"
+            ></iframe>
+          </div>
         </div>
-        
+
         {/* 🎬 Video Section */}
         <div className="video-section">
-          
+
           {/* 🎵 Music Videos */}
           <h2 className="carousel-title">Music Videos</h2>
           <Slider {...settings} className="video-carousel">
@@ -121,7 +123,7 @@ function Demo() {
               </video>
             </div>
           </Slider>
-          
+
         </div>
       </div>
     </section>

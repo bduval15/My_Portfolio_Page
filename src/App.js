@@ -11,9 +11,6 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
-      {/* The NavBar is always visible */}
-      <NavBar />
-
       {/* Define routes for each page */}
       <Routes>
         <Route path="/" element={<Home />} />

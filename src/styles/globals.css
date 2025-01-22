@@ -11,7 +11,16 @@
     background: #0f0e17; /* Dark background for the entire site */
     color: #ffffff;
     overflow-x: hidden;
+    overflow-y: auto;
   }
+
+  html, body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
   
   /* If using Google Fonts, you can import here or in index.html:
      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
