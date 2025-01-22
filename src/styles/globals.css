@@ -8,7 +8,7 @@
   /* BODY & GLOBAL */
   body {
     font-family: 'Orbitron', sans-serif;
-    background: #0f0e17; /* Dark background for the entire site */
+    background: #0f0e17; 
     color: #ffffff;
     overflow-x: hidden;
     overflow-y: auto;
@@ -37,7 +37,7 @@
     background: #ff0080;
   }
   
-  /* REUSABLE CLASSES, e.g., .section-title can go here if you want */
+
   .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -56,6 +56,6 @@
   }
   
   .glow-title {
-    animation: neonFlicker 2.5s infinite;
+    animation: neonFlicker 3.5s infinite;
   }
   

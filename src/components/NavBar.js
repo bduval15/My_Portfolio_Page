@@ -1,21 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/NavBar.css';
 
 function NavBar({ setActiveSection }) {
+  const [activeLink, setActiveLink] = useState(null);
+
+  const handleNavClick = (section) => {
+    setActiveSection(section);
+    setActiveLink(section);  // Set the active link manually
+  };
+
   return (
     <nav className="navbar">
       <ul className="nav-links">
         <li>
-          <a href="#" onClick={() => setActiveSection(null)} className="nav-link">Home</a>
+          <a 
+            href="#" 
+            onClick={() => handleNavClick(null)} 
+            className={`nav-link ${activeLink === null ? "active" : ""}`}
+          >
+            Home
+          </a>
         </li>
         <li>
-          <a href="#" onClick={() => setActiveSection("demo")} className="nav-link">Demo</a>
+          <a 
+            href="#" 
+            onClick={() => handleNavClick("demo")} 
+            className={`nav-link ${activeLink === "demo" ? "active" : ""}`}
+          >
+            Demo
+          </a>
         </li>
         <li>
-          <a href="#" onClick={() => setActiveSection("about")} className="nav-link">About</a>
+          <a 
+            href="#" 
+            onClick={() => handleNavClick("about")} 
+            className={`nav-link ${activeLink === "about" ? "active" : ""}`}
+          >
+            About
+          </a>
         </li>
         <li>
-          <a href="#" onClick={() => setActiveSection("contact")} className="nav-link">Contact</a>
+          <a 
+            href="#" 
+            onClick={() => handleNavClick("contact")} 
+            className={`nav-link ${activeLink === "contact" ? "active" : ""}`}
+          >
+            Contact
+          </a>
         </li>
       </ul>
     </nav>

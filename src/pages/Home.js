@@ -10,6 +10,7 @@ function Home() {
   const [titleText, setTitleText] = useState("");
   const [subtitleText, setSubtitleText] = useState("");
   const canvasRef = useRef(null);
+  
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -49,6 +50,7 @@ function Home() {
       }
     }
 
+  
     const interval = setInterval(drawMatrix, 50);
     return () => clearInterval(interval);
   }, []);
@@ -59,8 +61,8 @@ function Home() {
 
     let titleIndex = 0;
     let subtitleIndex = 0;
-    const titleSpeed = 100;
-    const subtitleSpeed = 50;
+    const titleSpeed = 80;
+    const subtitleSpeed = 40;
 
     function typeTitle() {
       if (titleIndex < title.length) {
@@ -87,7 +89,7 @@ function Home() {
     <>
       <canvas ref={canvasRef} className="matrix-background"></canvas>
 
-      {/* ✅ ONLY ONE NAVBAR HERE */}
+      {/* NAVBAR */}
       <NavBar setActiveSection={setActiveSection} />
 
       <header className="hero">

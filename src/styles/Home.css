@@ -5,7 +5,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  z-index: -2;
   background: black;
   image-rendering: crisp-edges;
   opacity: 30%; 
@@ -20,7 +20,7 @@
   justify-content: center;
   height: 80vh;
   text-align: center;
-  color: #00fff0;
+  color: #ffffff;
   z-index: -1;
 }
 
@@ -58,25 +58,20 @@ canvas {
 
 /* Modal Fix - Ensures it stays on top and centered */
 .modal {
-  position: fixed;  /* Make sure it's on top */
+  position: fixed;  
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1000; /* Ensures it's above other elements */
+  z-index: 1000; 
   width: 80vw;
   max-width: 900px;
   height: auto;
   max-height: 90vh;
   background-color: transparent;
   border-radius: 10px;
-  overflow-y: auto; /* Allows scrolling if content is too big */
+  overflow-y: auto; 
   box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
-
-}
-
-/* Prevent background from being scrollable when modal is open */
-body.modal-open {
-  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Close Button */
@@ -88,6 +83,12 @@ body.modal-open {
   cursor: pointer;
   color: white;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -55%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
 
 
 
