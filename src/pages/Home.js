@@ -1,16 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import NavBar from '../components/NavBar';
-import Demo from '../pages/Demo.js';
-import About from '../pages/About.js';
-import Contact from '../pages/Contact.js';
 import '../styles/Home.css';
 
-function Home() {
-  const [activeSection, setActiveSection] = useState(null);
+function Home({ activeSection }) {
   const [titleText, setTitleText] = useState("");
   const [subtitleText, setSubtitleText] = useState("");
   const canvasRef = useRef(null);
-  
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -30,7 +24,7 @@ function Home() {
     const matrixChars = '0123456789ABCDEF';
 
     function drawMatrix() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${fontSize}px monospace`;
 
@@ -39,8 +33,7 @@ function Home() {
         const x = i * fontSize;
         const y = drops[i] * fontSize;
 
-        const greyShades = ['#B0B0B0', '#A0A0A0', '#909090', '#808080'];
-        ctx.fillStyle = greyShades[Math.floor(Math.random() * greyShades.length)];
+        ctx.fillStyle = '#636363';
         ctx.fillText(text, x, y);
 
         if (y > canvas.height && Math.random() > 0.975) {
@@ -50,7 +43,6 @@ function Home() {
       }
     }
 
-  
     const interval = setInterval(drawMatrix, 50);
     return () => clearInterval(interval);
   }, []);
@@ -61,37 +53,34 @@ function Home() {
 
     let titleIndex = 0;
     let subtitleIndex = 0;
-    const titleSpeed = 80;
-    const subtitleSpeed = 40;
+    const titleSpeed = 100;
+    const subtitleSpeed = 50;
 
     function typeTitle() {
-      if (titleIndex < title.length) {
-        setTitleText(title.slice(0, titleIndex + 1));
+      if (titleIndex <= title.length) {
+        setTitleText(title.slice(0, titleIndex));
         titleIndex++;
         setTimeout(typeTitle, titleSpeed);
-      } else {
-        setTimeout(typeSubtitle, 500);
       }
     }
 
     function typeSubtitle() {
-      if (subtitleIndex < subtitle.length) {
-        setSubtitleText(subtitle.slice(0, subtitleIndex + 1));
+      if (subtitleIndex <= subtitle.length) {
+        setSubtitleText(subtitle.slice(0, subtitleIndex));
         subtitleIndex++;
         setTimeout(typeSubtitle, subtitleSpeed);
       }
     }
 
     typeTitle();
+    setTimeout(typeSubtitle, 1000);
   }, []);
 
   return (
     <>
       <canvas ref={canvasRef} className="matrix-background"></canvas>
 
-      {/* NAVBAR */}
-      <NavBar setActiveSection={setActiveSection} />
-
+      {/* Hero Section */}
       <header className="hero">
         <div className="hero-content">
           <h1 className="glow-title">{titleText}</h1>
@@ -99,15 +88,10 @@ function Home() {
         </div>
       </header>
 
-      {/* MODAL SYSTEM */}
+      {/* Dynamic Content Block (Only Shows If a Section is Active) */}
       {activeSection && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close-button" onClick={() => setActiveSection(null)}>✖</span>
-            {activeSection === 'demo' && <Demo />}
-            {activeSection === 'about' && <About />}
-            {activeSection === 'contact' && <Contact />}
-          </div>
+        <div className="content-container">
+          {activeSection}
         </div>
       )}
     </>

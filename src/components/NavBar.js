@@ -1,52 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/NavBar.css';
 
-function NavBar({ setActiveSection }) {
-  const [activeLink, setActiveLink] = useState(null);
-
-  const handleNavClick = (section) => {
-    setActiveSection(section);
-    setActiveLink(section);  // Set the active link manually
-  };
+function NavBar() {
+  const location = useLocation();
 
   return (
     <nav className="navbar">
       <ul className="nav-links">
         <li>
-          <a 
-            href="#" 
-            onClick={() => handleNavClick(null)} 
-            className={`nav-link ${activeLink === null ? "active" : ""}`}
-          >
+          <Link to="/" className={`nav-link ${location.pathname === "/" ? "active" : ""}`}>
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a 
-            href="#" 
-            onClick={() => handleNavClick("demo")} 
-            className={`nav-link ${activeLink === "demo" ? "active" : ""}`}
-          >
+          <Link to="/demo" className={`nav-link ${location.pathname === "/demo" ? "active" : ""}`}>
             Demo
-          </a>
+          </Link>
         </li>
         <li>
-          <a 
-            href="#" 
-            onClick={() => handleNavClick("about")} 
-            className={`nav-link ${activeLink === "about" ? "active" : ""}`}
-          >
+          <Link to="/about" className={`nav-link ${location.pathname === "/about" ? "active" : ""}`}>
             About
-          </a>
+          </Link>
         </li>
         <li>
-          <a 
-            href="#" 
-            onClick={() => handleNavClick("contact")} 
-            className={`nav-link ${activeLink === "contact" ? "active" : ""}`}
-          >
+          <Link to="/contact" className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`}>
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

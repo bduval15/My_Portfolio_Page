@@ -18,7 +18,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  min-height: 100vh;
   text-align: center;
   color: #ffffff;
   z-index: -1;
@@ -55,42 +55,3 @@ canvas {
 @keyframes blink-cursor {
   50% { border-color: transparent; }
 }
-
-/* Modal Fix - Ensures it stays on top and centered */
-.modal {
-  position: fixed;  
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; 
-  width: 80vw;
-  max-width: 900px;
-  height: auto;
-  max-height: 90vh;
-  background-color: transparent;
-  border-radius: 10px;
-  overflow-y: auto; 
-  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Modal Close Button */
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -55%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
-}
-
-
-
-
-
-
