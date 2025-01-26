@@ -20,11 +20,20 @@
     padding: 0;
 }
 
-  
-  /* If using Google Fonts, you can import here or in index.html:
-     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-  */
-  
+/* Matrix Background */
+.matrix-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background: black;
+  image-rendering: crisp-edges;
+  opacity: 30%; 
+  pointer-events: none;
+}
+
   /* SCROLLBAR (Optional styling) */
   ::-webkit-scrollbar {
     width: 8px;

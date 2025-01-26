@@ -1,0 +1,26 @@
+.carousel-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .slick-slide img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+  }
+  
+  .carousel-title {
+    font-size: 24px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+  
+  .carousel-description {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
