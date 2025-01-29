@@ -18,7 +18,7 @@ function Demo() {
     swipe: true,
     pauseOnHover: true,
   };
-
+  
   return (
     <section className="demo-section">
       <div className="demo-container">
@@ -58,7 +58,7 @@ function Demo() {
         </div>
 
         {/* Naruto: Web App */}
-        <div className="webapp-wrapper">
+        <div className="webapp-wrapper-2">
           <div className="description-box">
             <h2 className="description-title">Naruto Fan Page</h2>
             <p className="description-text">
@@ -77,14 +77,10 @@ function Demo() {
               <li><strong>Backend:</strong> Originally built with Node.js and MySQL, later transitioned to a Vercel-compatible backend.</li>
               <li><strong>Development Tools:</strong> Visual Studio Code for development.</li>
             </ul>
-
             <p className="description-text">
               This fan page serves as a design showcase, emphasizing modern web layouts, interactive features, and smooth navigation for an engaging user experience.
             </p>
           </div>
-
-
-
           <div className="webapp-container-2">
             <iframe
               src="https://naruto-fan-page-sable.vercel.app/"
