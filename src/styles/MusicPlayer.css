@@ -1,0 +1,145 @@
+.music-player-container {
+  display: flex;
+  justify-content: space-between; /* Spread content */
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #ff0080;
+  max-width: 1200px;
+  margin: auto;
+  width: 90%;
+  min-height: 500px;
+}
+
+/* Sidebar Music List */
+.music-library {
+  display: flex;
+  flex-direction: column;
+  width: 320px; /* Increase width */
+  max-height: 500px; /* More space */
+  overflow-y: auto;
+  padding: 15px;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 0, 128, 0.7);
+}
+
+/* Make Music Items Bigger */
+.music-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1.1rem;
+}
+
+.music-item:hover, .music-item.active {
+  background: #ff0080;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Increase Cover Image Size */
+.music-cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+/* Main Player Section */
+.music-main-player {
+  text-align: center;
+  flex: 1;
+  padding: 30px;
+  background: #222;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(255, 0, 128, 0.7);
+  width: 100%;
+}
+
+/* Increase Album Cover Size */
+.music-main-cover {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Improve Button Layout */
+.music-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.music-controls button {
+  background: #ff0080;
+  border: none;
+  padding: 12px 18px;
+  font-size: 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.music-controls button:hover {
+  background: #fff;
+  color: #ff0080;
+  transform: scale(1.1);
+}
+
+.music-visualizer {
+  width: 100%;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+  transition: transform 0.1s ease-in-out;
+}
+
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+  .music-player-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 30px;
+  }
+
+  .music-library {
+      width: 90%;
+      max-height: 300px;
+  }
+
+  .music-main-player {
+      width: 100%;
+  }
+
+  .music-main-cover {
+      width: 150px;
+      height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .music-library {
+      max-height: 250px;
+      font-size: 1rem;
+  }
+
+  .music-item {
+      padding: 10px;
+  }
+
+  .music-main-cover {
+      width: 130px;
+      height: 130px;
+  }
+}

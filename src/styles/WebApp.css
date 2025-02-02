@@ -1,0 +1,212 @@
+/******************************************************
+ * WEBAPP SECTION (NotEFY & Naruto Fan Page)
+ ******************************************************/
+
+ .webapp-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.webapp-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+.webapp-wrapper-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+.webapp-container {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 400px;
+  width: 1000px;
+  height: 1000px;
+  margin-left: auto;
+  margin-right: 0;
+  transform: scale(0.85);
+  transform-origin: center top;
+  overflow: visible;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.webapp-container-2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2000px;
+  height: 1000px;
+  margin-right: 0;
+  transform: scale(0.85);
+  transform-origin: center top;
+  overflow: visible;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: none;
+  position: relative;
+  left: 11%;
+}
+
+.webapp-iframe {
+  width: 460px;
+  height: 900px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+  background: #fff;
+}
+
+.webapp-iframe-2 {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+  background: #fff;
+}
+
+/* Description Box */
+.description-box {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  min-width: 350px;
+  max-width: 500px;
+}
+
+.description-box-2 {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  min-width: 350px;
+  max-width: 500px;
+  position: relative;
+  left: 7%
+}
+
+.description-box h2, .description-box-2 h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0px 0px 20px rgba(0, 255, 255, 0.8);
+  margin-bottom: 10px;
+}
+
+.description-text ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.description-text ul li::before {
+  content: "● ";
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.description-text strong {
+  color: #00ffff;
+}
+
+.description-box p,
+.description-box ul,
+.description-box h2 {
+  margin-bottom: 15px;
+}
+
+.description-box ul {
+  padding-left: 20px;
+}
+
+.description-box li {
+  margin-bottom: 10px;
+}
+
+.description-box-2 p,
+.description-box-2 ul,
+.description-box-2 h2 {
+  margin-bottom: 15px;
+}
+
+.description-box-2 ul {
+  padding-left: 20px;
+}
+
+.description-box-2 li {
+  margin-bottom: 10px;
+}
+
+
+/******************************************************
+ * RESPONSIVE DESIGN (WebApp)
+ ******************************************************/
+
+@media (max-width: 1024px) {
+  .webapp-wrapper, .webapp-wrapper-2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .description-box {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .webapp-container, .webapp-container-2 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .description-box {
+    font-size: 13px;
+    padding: 15px;
+  }
+
+  .webapp-wrapper, .webapp-wrapper-2 {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .webapp-container, .webapp-container-2 {
+    width: 95%;
+    height: auto;
+  }
+}
+

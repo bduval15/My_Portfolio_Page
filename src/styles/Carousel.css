@@ -1,26 +1,57 @@
+/* Carousel Container & Items Styled for Synthwave */
 .carousel-container {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .slick-slide img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
-  }
-  
-  .carousel-title {
-    font-size: 24px;
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff;
-  }
-  
-  .carousel-description {
-    font-size: 16px;
-    color: white;
-    margin-bottom: 10px;
-  }
-  
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+  z-index: 1;
+}
+
+.carousel-section {
+  margin-bottom: 40px;
+}
+
+.carousel-item {
+  width: 300px;
+  background: #111;
+  border: 2px solid #ff0080;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff0080;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.carousel-text {
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Slick Carousel Overrides */
+.slick-slide img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Carousel Titles with Neon Glow */
+.carousel-title {
+  font-size: 24px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 20px;
+}
