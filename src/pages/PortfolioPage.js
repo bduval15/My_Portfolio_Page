@@ -14,7 +14,32 @@ const soundDesignVideos = ["Find_You", "Iwaly"];
 
 const musicTracks = [
   {
-    title: "Next Time",
+    title: "After Hours",
+    cover: "/assets/pictures/After_Hours.png",
+    audio: "/assets/audio/AfterHours.mp3",
+  },
+  {
+    title: "Midnight Flights",
+    cover: "/assets/pictures/Midnight_Flights_Cover.png",
+    audio: "/assets/audio/MidnightFlights.mp3",
+  },
+  {
+    title: "Twelve Thirty Four",
+    cover: "/assets/pictures/1234_cover.png",
+    audio: "/assets/audio/1234.mp3",
+  },
+  {
+    title: "Running Out of Time",
+    cover: "/assets/pictures/running_out_of_time_cover.png",
+    audio: "/assets/audio/Running.mp3",
+  },
+  {
+    title: "Warp Drive",
+    cover: "/assets/pictures/Warp_Drive_cover.png",
+    audio: "/assets/audio/WarpDrive.mp3",
+  },
+  {
+    title: "Until Next Time",
     cover: "/assets/pictures/until_next_time_cover.png",
     audio: "/assets/audio/NextTime.mp3",
   },
@@ -24,15 +49,16 @@ const musicTracks = [
     audio: "/assets/audio/FindYou.mp3",
   },
   {
-    title: "Warp Drive",
-    cover: "/assets/pictures/Warp_Drive_cover.png",
-    audio: "/assets/audio/WarpDrive.mp3",
-  },
-  {
-    title: "5am",
+    title: "5 AM",
     cover: "/assets/pictures/5_am_cover.png",
     audio: "/assets/audio/5AM.mp3",
   },
+  {
+    title: "I Will Always Love You",
+    cover: "/assets/pictures/IWALY_Cover.png",
+    audio: "/assets/audio/IWALY.mp3",
+  },
+  
 ];
 
 function PortfolioPage() {
