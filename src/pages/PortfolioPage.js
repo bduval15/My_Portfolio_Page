@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import MusicPlayer from "../components/MusicPlayer";
 import Slider from "react-slick";
@@ -9,65 +9,26 @@ import "../styles/PortfolioPage.css";
 import "../styles/WebApp.css";
 import "../styles/SoundDesign.css";
 
-
 const soundDesignVideos = ["Find_You", "Iwaly"];
 
 const musicTracks = [
-  {
-    title: "After Hours",
-    cover: "/assets/pictures/After_Hours.png",
-    audio: "/assets/audio/AfterHours.mp3",
-  },
-  {
-    title: "Midnight Flights",
-    cover: "/assets/pictures/Midnight_Flights_Cover.png",
-    audio: "/assets/audio/MidnightFlights.mp3",
-  },
-  {
-    title: "Twelve Thirty Four",
-    cover: "/assets/pictures/1234_cover.png",
-    audio: "/assets/audio/1234.mp3",
-  },
-  {
-    title: "Running Out of Time",
-    cover: "/assets/pictures/running_out_of_time_cover.png",
-    audio: "/assets/audio/Running.mp3",
-  },
-  {
-    title: "Warp Drive",
-    cover: "/assets/pictures/Warp_Drive_cover.png",
-    audio: "/assets/audio/WarpDrive.mp3",
-  },
-  {
-    title: "Until Next Time",
-    cover: "/assets/pictures/until_next_time_cover.png",
-    audio: "/assets/audio/NextTime.mp3",
-  },
-  {
-    title: "Find You",
-    cover: "/assets/pictures/Find_you_cover.png",
-    audio: "/assets/audio/FindYou.mp3",
-  },
-  {
-    title: "5 AM",
-    cover: "/assets/pictures/5_am_cover.png",
-    audio: "/assets/audio/5AM.mp3",
-  },
-  {
-    title: "I Will Always Love You",
-    cover: "/assets/pictures/IWALY_Cover.png",
-    audio: "/assets/audio/IWALY.mp3",
-  },
-  
+  { title: "After Hours", cover: "/assets/pictures/After_Hours.png", audio: "/assets/audio/AfterHours.mp3" },
+  { title: "Midnight Flights", cover: "/assets/pictures/Midnight_Flights_Cover.png", audio: "/assets/audio/MidnightFlights.mp3" },
+  { title: "Twelve Thirty Four", cover: "/assets/pictures/1234_cover.png", audio: "/assets/audio/1234.mp3" },
+  { title: "Running Out of Time", cover: "/assets/pictures/running_out_of_time_cover.png", audio: "/assets/audio/Running.mp3" },
+  { title: "Warp Drive", cover: "/assets/pictures/Warp_Drive_cover.png", audio: "/assets/audio/WarpDrive.mp3" },
+  { title: "Until Next Time", cover: "/assets/pictures/until_next_time_cover.png", audio: "/assets/audio/NextTime.mp3" },
+  { title: "Find You", cover: "/assets/pictures/Find_you_cover.png", audio: "/assets/audio/FindYou.mp3" },
+  { title: "5 AM", cover: "/assets/pictures/5_am_cover.png", audio: "/assets/audio/5AM.mp3" },
+  { title: "I Will Always Love You", cover: "/assets/pictures/IWALY_Cover.png", audio: "/assets/audio/IWALY.mp3" },
 ];
 
 function PortfolioPage() {
-
   const [titleText, setTitleText] = useState("");
   const [subtitleText, setSubtitleText] = useState("");
   const [subtextVisible, setSubtextVisible] = useState(false);
-
-  const [activeTab, setActiveTab] = useState("apps");
+  const [activeTab, setActiveTab] = useState(null);
+  const [navbarMoved, setNavbarMoved] = useState(false);
 
   useEffect(() => {
     const title = "Braeden Duval";
@@ -78,7 +39,6 @@ function PortfolioPage() {
 
     const titleSpeed = 80;
     const subtitleSpeed = 50;
-
 
     function typeTitle() {
       if (titleIndex <= title.length) {
@@ -102,18 +62,20 @@ function PortfolioPage() {
     setTimeout(typeSubtitle, 1000);
   }, []);
 
-  // Slick carousel settings (only for Sound Design now)
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    arrows: true,
-    draggable: true,
-    swipe: true,
-    pauseOnHover: true,
+  useEffect(() => {
+    if (activeTab) {
+      setNavbarMoved(true);
+    }
+  }, [activeTab]);
+
+  const handleTabChange = (tab) => {
+    if(activeTab === tab){
+      setActiveTab(null);
+      setNavbarMoved(false);
+    } else {
+      setActiveTab(tab);
+      setNavbarMoved(true);
+    }
   };
 
   return (
@@ -128,14 +90,22 @@ function PortfolioPage() {
         </div>
       </header>
 
-      <nav className="portfolio-nav">
-        <button className={activeTab === "about" ? "active-tab" : ""} onClick={() => setActiveTab("about")}>About</button>
-        <button className={activeTab === "apps" ? "active-tab" : ""} onClick={() => setActiveTab("apps")}>Apps / Web Pages</button>
-        <button className={activeTab === "music" ? "active-tab" : ""} onClick={() => setActiveTab("music")}>Music</button>
-        <button className={activeTab === "sound" ? "active-tab" : ""} onClick={() => setActiveTab("sound")}>Sound Design</button>
-        <button className={activeTab === "games" ? "active-tab" : ""} onClick={() => setActiveTab("games")}>Games</button>
-        <button className={activeTab === "contact" ? "active-tab" : ""} onClick={() => setActiveTab("contact")}>Contact</button>
+      <nav className={`portfolio-nav ${navbarMoved ? "moved" : ""}`}>
+        <button className={activeTab === "about" ? "active-tab" : ""} onClick={() => handleTabChange("about")}>About</button>
+        <button className={activeTab === "apps" ? "active-tab" : ""} onClick={() => handleTabChange("apps")}>Apps / Web Pages</button>
+        <button className={activeTab === "music" ? "active-tab" : ""} onClick={() => handleTabChange("music")}>Music</button>
+        <button className={activeTab === "sound" ? "active-tab" : ""} onClick={() => handleTabChange("sound")}>Sound Design</button>
+        <button className={activeTab === "games" ? "active-tab" : ""} onClick={() => handleTabChange("games")}>Games</button>
+        <button className={activeTab === "contact" ? "active-tab" : ""} onClick={() => handleTabChange("contact")}>Contact</button>
       </nav>
+
+      <div className={`content-container ${navbarMoved ? "shifted" : ""}`}>
+        {!activeTab && (
+          <section className="landing-section">
+            <h2 className="category-title">Welcome to My Portfolio</h2>
+            <p>Select a category from the navbar to view my work.</p>
+          </section>
+        )}
 
       <div className="demo-container">
         {activeTab === "about" && (
@@ -156,7 +126,6 @@ function PortfolioPage() {
           </section>
         )}
 
-        <div className="demo-container">
           {activeTab === "apps" && (
             <section className="demo-section">
               {/* NotEFY */}

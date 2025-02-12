@@ -17,9 +17,12 @@ const MusicPlayer = ({ tracks }) => {
     if (!audio) return;
   
     // Reset time & progress when changing track
+    audio.pause();
+    setIsPlaying(false);
     setCurrentTime(0);
     setProgress(0);
     setDuration(audio.duration || 0);
+    audio.load();
   
     // Handle track progress
     const updateProgress = () => {

@@ -3,17 +3,28 @@
  ******************************************************/
 
  .portfolio-nav {
-  position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: column;
+  flex-direction: row; 
   gap: 15px;
   background: rgba(0, 0, 0, 0.8);
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(255, 0, 128, 0.7);
+  transition: none;
+  z-index: 1000;
+}
+
+.portfolio-nav.moved {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  flex-direction: column; 
+  transition: none;
 }
 
 .portfolio-nav button {
@@ -42,6 +53,14 @@
   min-height: 100vh;
   position: relative;
   padding-bottom: 50px;
+}
+
+.content-container {
+  transition: none;
+}
+
+.content-container.shifted {
+  margin-left: 120px;
 }
 
 /* Hero Section */
