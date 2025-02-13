@@ -1,0 +1,152 @@
+/******************************************************
+ * LANDING PAGE STYLES
+ ******************************************************/
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.home-page .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.home-page .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Glow Title */
+.glow-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px #ff0080, 0 0 24px #ff0080;
+  animation: neonFlicker 3s infinite alternate, neonPulse 5s infinite alternate;
+  margin-bottom: 5px;
+}
+
+/* Subtitle */
+.glow-subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00f0ff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  animation: neonPulse 4s infinite alternate;
+  margin-bottom: 15px;
+}
+
+/******************************************************
+ * BOX AROUND WELCOME MESSAGE
+ ******************************************************/
+
+.welcome-container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 25px rgba(255, 0, 128, 0.5);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.category-title-landing 
+{
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff0080;
+  text-shadow: 0px 0px 15px rgba(255, 0, 128, 0.8);
+  margin-bottom: 10px;
+}
+
+.welcome-container p {
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+/******************************************************
+ * NAVBAR STYLING
+ ******************************************************/
+
+.portfolio-nav {
+  position: absolute;
+  top: 75%; /* Moves navbar lower */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 0, 128, 0.7);
+  z-index: 1000;
+}
+
+.portfolio-nav.moved {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  flex-direction: column;
+}
+
+.portfolio-nav button {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ff0080;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  width: 140px;
+  border-radius: 5px;
+}
+
+.portfolio-nav button:hover,
+.portfolio-nav button.active-tab {
+  background: #ff0080;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(255, 0, 128, 0.8);
+}
+
+/******************************************************
+ * ANIMATIONS
+ ******************************************************/
+
+/* Title Flicker Effect */
+@keyframes neonFlicker {
+  0%, 100% { text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080; }
+  50% { text-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080; }
+}
+
+@keyframes neonPulse {
+  0%, 100% { text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.7), 0px 0px 16px rgba(0, 255, 255, 0.5); }
+  50% { text-shadow: 0px 0px 15px rgba(0, 255, 255, 1), 0px 0px 30px rgba(0, 255, 255, 0.8); }
+}
+ 

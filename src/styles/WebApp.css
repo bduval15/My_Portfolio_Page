@@ -1,6 +1,16 @@
 /******************************************************
- * WEBAPP SECTION (NotEFY & Naruto Fan Page)
+ * WEBAPP SECTION 
  ******************************************************/
+ 
+ .demo-section-apps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  padding: 60px 0;
+}
 
  .webapp-align {
   display: flex;
@@ -9,7 +19,6 @@
   justify-content: center;
   width: 100%;
 }
-
 
 .webapp-wrapper {
   display: flex;
@@ -50,6 +59,7 @@
   overflow: visible;
   border-radius: 10px;
   box-shadow: none;
+  
 }
 
 .webapp-container-2 {
@@ -58,7 +68,7 @@
   align-items: center;
   justify-content: center;
   width: 2000px;
-  height: 1000px;
+  height: 900px;
   margin-right: 0;
   transform: scale(0.85);
   transform-origin: center top;
@@ -67,7 +77,7 @@
   border-radius: 10px;
   box-shadow: none;
   position: relative;
-  left: 11%;
+  right: 2%;
 }
 
 .webapp-iframe {
@@ -77,6 +87,7 @@
   border-radius: 15px;
   box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
   background: #fff;
+
 }
 
 .webapp-iframe-2 {
@@ -87,6 +98,8 @@
   box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
   background: #fff;
 }
+
+
 
 /* Description Box */
 .description-box {
@@ -116,7 +129,7 @@
   min-width: 350px;
   max-width: 500px;
   position: relative;
-  left: 7%
+  left: 0%
 }
 
 .description-box h2, .description-box-2 h2 {
