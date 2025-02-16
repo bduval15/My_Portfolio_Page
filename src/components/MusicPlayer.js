@@ -180,7 +180,7 @@ const MusicPlayer = ({ tracks }) => {
           {/* Control Buttons */}
           <div className="music-controls">
             <button onClick={() => setCurrentTrack((prev) => Math.max(prev - 1, 0))}>⏮</button>
-            <button onClick={togglePlayPause}>{isPlaying ? "⏸" : "▶️"}</button>
+            <button onClick={togglePlayPause}>{isPlaying ? "⏸" : "⯈"}</button>
             <button onClick={() => setCurrentTrack((prev) => Math.min(prev + 1, tracks.length - 1))}>⏭</button>
           </div>
 

@@ -1,17 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/MiniGame.css";
 
-// SPRITE ASSETS – (Images must be in public/assets/sprites)
-const spaceshipSprite = "/assets/sprites/mainShip.png";
-const explosionSprite = "/assets/sprites/explosion.png";
+// SPRITE ASSETS
+const spaceshipSprite = "/assets/sprites/SpaceShip.png";
 const enemySprites = {
-  basic: "/assets/sprites/enemy-small.png",
-  fast: "/assets/sprites/enemy-medium.png",
-  agile: "/assets/sprites/enemy-small.png",
-  heavy: "/assets/sprites/enemy-big.png",
-  twin: "/assets/sprites/enemy-medium.png",
+  basic: "/assets/sprites/insect-1.png",
+  fast: "/assets/sprites/insect-2.png",
+  agile: "/assets/sprites/insect-1.png",
+  heavy: "/assets/sprites/tiny_ship13.png",
+  twin: "/assets/sprites/tiny_ship1.png",
 };
-const powerUpSprite = "/assets/sprites/power-up.png";
+const powerUpSprite = "/assets/sprites/bonus_time.png";
+const playerBulletSprite = "/assets/sprites/laser-3.png";
+const enemyBulletSprite = "/assets/sprites/laser-2.png";
+
+const playerExplosionFrames = Array.from(
+  { length: 10 },
+  (_, i) => `/assets/sprites/player-explosion/frame-${i + 1}.png`
+);
+
+const enemyExplosionFrames = Array.from(
+  { length: 5 },
+  (_, i) => `/assets/sprites/enemy-explosion/frame-${i + 1}.png`
+);
+
 
 // Enemy size configuration
 const enemySizes = {
@@ -47,6 +59,7 @@ function AboutMiniGame({ exitGame }) {
   const [doubleBulletActive, setDoubleBulletActive] = useState(false);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [explosions, setExplosions] = useState([]);
 
   // enemyRef to hold latest enemies for shooting
   const enemyRef = useRef(enemies);
@@ -117,6 +130,34 @@ function AboutMiniGame({ exitGame }) {
       ]);
     }
   };
+
+  // Explosions
+  const triggerExplosion = (x, y, type) => {
+    const totalFrames = type === "player" ? 10 : 5;
+    const explosionId = Math.random();
+
+    setExplosions((prev) => [...prev, { id: explosionId, x, y, type, frame: 0 }]);
+
+    let frameIndex = 0;
+    const interval = setInterval(() => {
+      setExplosions((prev) =>
+        prev.map((exp) =>
+          exp.id === explosionId
+            ? { ...exp, frame: Math.min(exp.frame + 1, totalFrames - 1) }
+            : exp
+        )
+      );
+
+      frameIndex++;
+      if (frameIndex >= totalFrames) {
+        clearInterval(interval);
+        setTimeout(() => {
+          setExplosions((prev) => prev.filter((exp) => exp.id !== explosionId));
+        }, 200); 
+      }
+    }, 80); 
+  };
+
 
   // Move player bullets upward
   useEffect(() => {
@@ -213,12 +254,13 @@ function AboutMiniGame({ exitGame }) {
       );
     });
     if (collision) {
+      triggerExplosion(spaceshipX, containerHeight - 100, "player");
       setGameOver(true);
     }
   }, [enemies, spaceshipX, containerHeight, gameStarted]);
 
 
-  // Move enemies with a sine-wave trajectory (account for twin offset)
+  // Move enemies with a sine-wave trajectory (accounts for twin offset)
   useEffect(() => {
     if (!gameStarted) return;
     const interval = setInterval(() => {
@@ -313,6 +355,7 @@ function AboutMiniGame({ exitGame }) {
             b.y < enemy.y + eHeight
         );
         if (bulletHit) {
+          triggerExplosion(enemy.x, enemy.y, "enemy");
           setScore((s) => s + enemy.points);
           setBullets((bs) => bs.filter((b) => b !== bulletHit));
           return false;
@@ -334,6 +377,7 @@ function AboutMiniGame({ exitGame }) {
           bullet.y > shipTop &&
           bullet.y < shipBottom
         ) {
+          triggerExplosion(spaceshipX, containerHeight - 100, "player");
           setGameOver(true);
           return false;
         }
@@ -385,6 +429,9 @@ function AboutMiniGame({ exitGame }) {
 
   return (
     <div className="game-container">
+      {/* Background Image */}
+      <img className="game-background" src="/assets/sprites/Stars-B.png" alt="Game Background" />
+
       {!gameStarted && (
         <div className="start-menu">
           <h2>Shoot as many enemies as you can before they destroy you!</h2>
@@ -395,30 +442,31 @@ function AboutMiniGame({ exitGame }) {
       {gameStarted && (
         <>
           <div className="score-board">Score: {score}</div>
-          <button className="quit-button" onClick={exitGame}>
-            Quit
-          </button>
+          <button className="quit-button" onClick={exitGame}>Quit</button>
 
           {gameOver ? (
-            <img
-              className="explosion"
-              src={explosionSprite}
-              alt="Explosion"
-              style={{ left: `${spaceshipX}px`, bottom: "50px" }}
-            />
+            explosions.map((exp) =>
+              exp.type === "player" ? (
+                <img
+                  key={exp.id}
+                  className="explosion"
+                  src={playerExplosionFrames[exp.frame]}
+                  alt="Player Explosion"
+                  style={{ left: `${exp.x}px`, top: `${exp.y}px` }}
+                />
+              ) : null
+            )
           ) : (
-            <img
-              className="spaceship"
-              src={spaceshipSprite}
-              alt="Spaceship"
-              style={{ left: `${spaceshipX}px`, top: `${containerHeight - 100}px` }}
-            />
+            <img className="spaceship" src={spaceshipSprite} alt="Spaceship" style={{ left: `${spaceshipX}px`, top: `${containerHeight - 100}px` }} />
           )}
 
+
+          {/* Player Bullets (Using PNG Sprite) */}
           {bullets.map((b, i) => (
-            <div key={i} className="bullet" style={{ left: b.x, top: b.y }} />
+            <img key={i} className="bullet" src={playerBulletSprite} alt="Player Bullet" style={{ left: b.x, top: b.y }} />
           ))}
 
+          {/* Enemy Sprites */}
           {enemies.map((enemy) => (
             <img
               key={enemy.id}
@@ -434,20 +482,28 @@ function AboutMiniGame({ exitGame }) {
             />
           ))}
 
-          {enemyBullets.map((bullet, i) => (
-            <div key={i} className="enemy-bullet" style={{ left: bullet.x, top: bullet.y }} />
-          ))}
-
-          {powerUps.map((p) => (
+          {/* Explosions */}
+          {explosions.map((exp) => (
             <img
-              key={p.id}
-              className="power-up"
-              src={powerUpSprite}
-              alt="Power Up"
-              style={{ left: p.x, top: p.y }}
+              key={exp.id}
+              className="explosion"
+              src={exp.type === "player" ? playerExplosionFrames[exp.frame] : enemyExplosionFrames[exp.frame]}
+              alt="Explosion"
+              style={{ left: `${exp.x}px`, top: `${exp.y}px` }}
             />
           ))}
 
+          {/* Enemy Bullets (Using PNG Sprite) */}
+          {enemyBullets.map((bullet, i) => (
+            <img key={i} className="enemy-bullet" src={enemyBulletSprite} alt="Enemy Bullet" style={{ left: bullet.x, top: bullet.y }} />
+          ))}
+
+          {/* Power-Ups */}
+          {powerUps.map((p) => (
+            <img key={p.id} className="power-up" src={powerUpSprite} alt="Power Up" style={{ left: p.x, top: p.y }} />
+          ))}
+
+          {/* Game Over Screen */}
           {gameOver && (
             <div className="game-over">
               <p>Game Over!</p>

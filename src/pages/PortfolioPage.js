@@ -6,13 +6,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MiniGame from "../components/MiniGame";
+import Contact from "../components/Contact";
 
-
+import "../styles/globals.css";
 import "../styles/LandingPage.css";
 import "../styles/WebApp.css";
 import "../styles/SoundDesign.css";
 import "../styles/About.css";
 import "../styles/Games.css";
+import "../styles/Contact.css";
 
 const soundDesignVideos = ["Find_You", "Iwaly"];
 
@@ -193,19 +195,8 @@ function PortfolioPage() {
           )}
 
           {activeTab === "contact" && (
-            <section className="demo-section">
-              <h2 className="category-title">Contact Me</h2>
-              <div className="description-box">
-                <p>
-                  Feel free to reach out for collaborations, freelance projects,
-                  or just to say hi! You can contact me through the following channels:
-                </p>
-                <ul>
-                  <li><strong>Email:</strong> your.email@example.com</li>
-                  <li><strong>GitHub:</strong> github.com/yourprofile</li>
-                  <li><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</li>
-                </ul>
-              </div>
+            <section className="demo-section-contact">
+              <Contact/>
             </section>
           )}
         </div>

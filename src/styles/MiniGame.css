@@ -1,15 +1,19 @@
+body {
+  font-family: 'Exo 2', sans-serif;
+}
+
 :root {
   /* Game container dimensions */
   --game-width: 40vw;
   --game-height: 90vh;
 
   /* Sprite sizes */
-  --ship-width: 40px;
-  --ship-height: 40px;
-  --bullet-width: 5px;  
-  --bullet-height: 10px;
-  --enemy-bullet-width: 5px;
-  --enemy-bullet-height: 10px;
+  --ship-width: 60px;
+  --ship-height: 60px;
+  --bullet-width: 10px;  
+  --bullet-height: 20px;
+  --enemy-bullet-width: 10px;
+  --enemy-bullet-height: 20px;
   --powerup-width: 30px;
   --powerup-height: 30px;
 }
@@ -25,6 +29,13 @@
   background: rgba(0, 0, 0, 0.8);
   z-index: 9999;
   overflow: hidden;
+}
+
+.game-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 /* All game elements are positioned relative to the container */
@@ -80,7 +91,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.8rem;
-  color: red;
+  color: #ff0080;
   font-weight: bold;
   text-align: center;
 }
@@ -142,24 +153,11 @@
 }
 
 /* Sprite styles */
-/* For a 1-frame sprite, simply use the defined width and height */
 
-/* Player bullet */
-.bullet {
-  width: var(--bullet-width);
-  height: var(--bullet-height);
-  background-color: #ff0080;
-  box-shadow: 0 0 10px #ff0080;
-  z-index: 1;
-}
-
-/* Enemy bullet – increase z-index so it’s above the ship */
-.enemy-bullet {
-  width: var(--enemy-bullet-width);
-  height: var(--enemy-bullet-height);
-  background-color: #ff0000;
-  box-shadow: 0 0 5px #ff0000;
-  z-index: 1;
+.bullet, .enemy-bullet {
+  position: absolute;
+  width: 20px;  /* Adjust size based on actual PNG */
+  height: 40px;
 }
 
 /* Default enemy (1-frame sprite) */
@@ -183,7 +181,10 @@
   z-index: 1;
 }
 
-/* Explosion */
 .explosion {
-  z-index: 5;
+  position: absolute;
+  width: 60px; 
+  height: 60px;
+  pointer-events: none;
 }
+

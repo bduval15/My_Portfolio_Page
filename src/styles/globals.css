@@ -7,7 +7,7 @@
   
   /* BODY & GLOBAL */
   body {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Exo 2', sans-serif !important;
     background: #0f0e17; 
     color: #ffffff;
     overflow-x: hidden;
@@ -57,7 +57,7 @@
     color: #fff;
 }
 
-/* Improve Landing Title */
+/* Landing Title */
 .category-title-landing {
     font-size: 2.5rem;
     font-weight: bold;
@@ -66,7 +66,7 @@
     margin-bottom: 15px;
 }
 
-/* Improve Landing Subtitle */
+/* Landing Subtitle */
 .landing-description {
     font-size: 1.2rem;
     color: #ccc;
