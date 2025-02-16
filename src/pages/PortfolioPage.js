@@ -5,10 +5,14 @@ import MusicPlayer from "../components/MusicPlayer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import MiniGame from "../components/MiniGame";
+
 
 import "../styles/LandingPage.css";
 import "../styles/WebApp.css";
 import "../styles/SoundDesign.css";
+import "../styles/About.css";
+import "../styles/Games.css";
 
 const soundDesignVideos = ["Find_You", "Iwaly"];
 
@@ -27,9 +31,10 @@ const musicTracks = [
 function PortfolioPage() {
   const [titleText, setTitleText] = useState("");
   const [subtitleText, setSubtitleText] = useState("");
-  const [subtextVisible, setSubtextVisible] = useState(false);
+  const [subtextvisible, setSubtextVisible] = useState(true);
   const [activeTab, setActiveTab] = useState(null);
   const [navbarMoved, setNavbarMoved] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
 
   useEffect(() => {
     const title = "Braeden Duval";
@@ -70,6 +75,9 @@ function PortfolioPage() {
   }, [activeTab]);
 
   const handleTabChange = (tab) => {
+    if (tab !== "games") {
+      setGameStarted(false);
+    }
     if (activeTab === tab) {
       setActiveTab(null);
       setNavbarMoved(false);
@@ -109,21 +117,29 @@ function PortfolioPage() {
 
         <div className="demo-container">
           {activeTab === "about" && (
-            <section className="demo-section">
-              <h2 className="category-title">About Me</h2>
-              <div className="description-box">
-                <p>
-                  I'm Braeden Duval, a passionate Software Developer & Audio Engineer.
-                  I specialize in creating dynamic web applications, music production,
-                  and sound design for various media projects.
-                </p>
-                <p>
-                  My goal is to build immersive user experiences through technology
-                  and creativity, bringing interactive applications and audio-driven
-                  content to life.
-                </p>
+            <div className="about-wrapper">
+              <div className="about-header">
+                <h2 className="category-title">About Me</h2>
+
               </div>
-            </section>
+              <section className="demo-section-about">
+                <div className="about-content">
+                  <div className="description-box-about">
+                    <p>
+                      I'm Braeden Duval, a passionate Software Developer & Audio Engineer.
+                      I specialize in creating dynamic web applications, music production,
+                      and sound design for various media projects.
+                    </p>
+                    <p>
+                      My goal is to build immersive user experiences through technology
+                      and creativity, bringing interactive applications and audio-driven
+                      content to life.
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+
           )}
 
           {activeTab === "apps" && (
@@ -133,7 +149,7 @@ function PortfolioPage() {
           )}
 
           {activeTab === "music" && (
-            <section className="demo-section">
+            <section className="demo-section-music">
               <MusicPlayer tracks={musicTracks} />
             </section>
           )}
@@ -156,32 +172,45 @@ function PortfolioPage() {
           )}
 
           {activeTab === "games" && (
+            (gameStarted ? (
+              <MiniGame exitGame={() => setGameStarted(false)} />
+            ) :
+              <section className="demo-section-games">
+                <div className="games-wrapper">
+                  <div className="games-header">
+                    <p>Coming Soon!</p>
+                  </div>
+                  <p>In the meantime... Click the button!</p>
+                  <img
+                    className="profile-picture"
+                    src="/assets/pictures/brady_avatar.png"
+                    alt="Profile"
+                    onClick={() => setGameStarted(true)}
+                  />
+                </div>
+              </section>
+            )
+          )}
+
+          {activeTab === "contact" && (
             <section className="demo-section">
-              <p>Coming Soon!</p>
+              <h2 className="category-title">Contact Me</h2>
+              <div className="description-box">
+                <p>
+                  Feel free to reach out for collaborations, freelance projects,
+                  or just to say hi! You can contact me through the following channels:
+                </p>
+                <ul>
+                  <li><strong>Email:</strong> your.email@example.com</li>
+                  <li><strong>GitHub:</strong> github.com/yourprofile</li>
+                  <li><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</li>
+                </ul>
+              </div>
             </section>
           )}
         </div>
       </div>
-
-      {activeTab === "contact" && (
-        <section className="demo-section">
-          <h2 className="category-title">Contact Me</h2>
-          <div className="description-box">
-            <p>
-              Feel free to reach out for collaborations, freelance projects,
-              or just to say hi! You can contact me through the following channels:
-            </p>
-            <ul>
-              <li><strong>Email:</strong> your.email@example.com</li>
-              <li><strong>GitHub:</strong> github.com/yourprofile</li>
-              <li><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</li>
-            </ul>
-          </div>
-        </section>
-      )}
-
     </div>
-
   );
 }
 

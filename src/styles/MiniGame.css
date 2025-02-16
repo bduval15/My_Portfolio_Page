@@ -1,0 +1,189 @@
+:root {
+  /* Game container dimensions */
+  --game-width: 40vw;
+  --game-height: 90vh;
+
+  /* Sprite sizes */
+  --ship-width: 40px;
+  --ship-height: 40px;
+  --bullet-width: 5px;  
+  --bullet-height: 10px;
+  --enemy-bullet-width: 5px;
+  --enemy-bullet-height: 10px;
+  --powerup-width: 30px;
+  --powerup-height: 30px;
+}
+
+/* Game container restricted to 50vw and centered */
+.game-container {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--game-width);
+  height: var(--game-height);
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* All game elements are positioned relative to the container */
+.game-container .spaceship,
+.game-container .bullet,
+.game-container .enemy,
+.game-container .enemy-bullet,
+.game-container .power-up,
+.game-container .explosion {
+  position: absolute;
+}
+
+/* Score Display */
+.score-board {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: #ff0080;
+  background: rgba(15, 14, 23, 0.8);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid #ff0080;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Quit Button styling */
+.quit-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1rem;
+  color: #ffffff;
+  background: #ff0080;
+  padding: 10px 20px;
+  border: 2px solid #ff0080;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 0, 128, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.quit-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 0, 128, 1);
+}
+
+/* Game Over Overlay */
+.game-over {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+.game-over p {
+  margin: 10px 0;
+}
+.game-over-buttons {
+  margin-top: 20px;
+}
+.game-over-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: #ff0080;
+  border: 2px solid #ff0080;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.game-over-buttons button:hover {
+  transform: scale(1.1);
+}
+
+/* Start Menu Overlay */
+.start-menu {
+  position: fixed;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ff0080;
+  text-align: center;
+}
+.start-menu h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  overflow: auto;
+}
+.start-menu button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #ff0080;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.start-menu button:hover {
+  transform: scale(1.1);
+}
+
+/* Sprite styles */
+/* For a 1-frame sprite, simply use the defined width and height */
+
+/* Player bullet */
+.bullet {
+  width: var(--bullet-width);
+  height: var(--bullet-height);
+  background-color: #ff0080;
+  box-shadow: 0 0 10px #ff0080;
+  z-index: 1;
+}
+
+/* Enemy bullet – increase z-index so it’s above the ship */
+.enemy-bullet {
+  width: var(--enemy-bullet-width);
+  height: var(--enemy-bullet-height);
+  background-color: #ff0000;
+  box-shadow: 0 0 5px #ff0000;
+  z-index: 1;
+}
+
+/* Default enemy (1-frame sprite) */
+.enemy {
+  width: var(--enemy-width);
+  height: var(--enemy-height);
+  z-index: 1;
+}
+
+/* Power-up */
+.power-up {
+  width: var(--powerup-width);
+  height: var(--powerup-height);
+  z-index: 1;
+}
+
+/* Spaceship */
+.spaceship {
+  width: var(--ship-width);
+  height: var(--ship-height);
+  z-index: 1;
+}
+
+/* Explosion */
+.explosion {
+  z-index: 5;
+}

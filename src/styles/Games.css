@@ -1,0 +1,70 @@
+/****************************************
+  Games Section Container
+****************************************/
+.demo-section-games {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: clear;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 30vh auto; 
+  }
+  
+  /****************************************
+    Wrapper for text + picture
+  ****************************************/
+  .games-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* spacing between the 'Coming Soon!' text and the rest */
+  }
+  
+  /****************************************
+    Header (Holds "Coming Soon!" text)
+  ****************************************/
+  .games-header {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Style for the "Coming Soon!" text */
+  .games-header p {
+    font-size: 2rem;
+    color: #ff0080;
+    text-shadow: 0 0 5px #ff0080, 0 0 15px #ff0080;
+    margin: 0;
+  }
+  
+  /****************************************
+    Additional Paragraph Below Header
+  ****************************************/
+  .games-wrapper p {
+    margin: 0.5rem 0;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  /****************************************
+    Profile Picture
+  ****************************************/
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ff0080;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* makes it clear you can click */
+  }
+  
+  .profile-picture:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 0, 128, 0.8);
+  }
+  

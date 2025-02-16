@@ -1,16 +1,57 @@
-.about-section {
-    background-color: #0f0e17;
-    color: #ffffff;
-    padding: 4rem 1rem;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-shadow: 0 0 5px #ff0080, 0 0 15px #ff0080;
-    color: #ff0080;
-  }
-  
+/****************************************
+  Wrapper (Holds Everything)
+****************************************/
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Space between header and content */
+}
+
+/****************************************
+  Header (Title + Profile Pic)
+****************************************/
+.about-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; 
+  background: clear;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+/* Title Styling */
+.category-title {
+  font-size: 2rem;
+  color: #ff0080;
+  text-shadow: 0 0 5px #ff0080, 0 0 15px #ff0080;
+  margin: 0;
+}
+
+/****************************************
+  Main About Section (Text Box Separate)
+****************************************/
+.demo-section-about {
+  background: rgba(15, 14, 23, 0.9);
+  border: 2px solid #ff0080;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+  padding: 2rem;
+  max-width: 900px;
+}
+
+/****************************************
+  Description Box (Inside Main Container)
+****************************************/
+.description-box-about {
+  background-color: rgba(26, 26, 26, 0.85);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.2);
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  max-width: 600px;
+  text-align: left;
+}
