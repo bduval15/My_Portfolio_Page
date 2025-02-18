@@ -133,6 +133,7 @@ function PortfolioPage() {
                     However, after reflecting on my journey, I realized that I wanted to combine my love for music with technology and game development. 
                     This led me to pivot and pursue a new path that merges both my creative and technical interests.
                     </p>
+                    <p></p>
                     <p>
                     Currently, I’m pursuing a Computer Systems Technology Diploma at BCIT, where I’m building a solid foundation in software development and technology. 
                     Through my studies, I’ve learned how to combine creativity with problem-solving, from developing web applications to creating interactive experiences. 
@@ -186,7 +187,7 @@ function PortfolioPage() {
                   <p>In the meantime... Click the button!</p>
                   <img
                     className="profile-picture"
-                    src="/assets/pictures/brady_avatar.png"
+                    src="/assets/webp.pictures/brady_avatar.webp"
                     alt="Profile"
                     onClick={() => setGameStarted(true)}
                   />
