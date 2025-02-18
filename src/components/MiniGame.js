@@ -2,26 +2,26 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/MiniGame.css";
 
 // SPRITE ASSETS
-const spaceshipSprite = "/assets/sprites/SpaceShip.png";
+const spaceshipSprite = "/assets/webp.sprites/SpaceShip.webp";
 const enemySprites = {
-  basic: "/assets/sprites/insect-1.png",
-  fast: "/assets/sprites/insect-2.png",
-  agile: "/assets/sprites/insect-1.png",
-  heavy: "/assets/sprites/tiny_ship13.png",
-  twin: "/assets/sprites/tiny_ship1.png",
+  basic: "/assets/webp.sprites/insect-1.webp",
+  fast: "/assets/webp.sprites/insect-2.webp",
+  agile: "/assets/webp.sprites/insect-1.webp",
+  heavy: "/assets/webp.sprites/tiny_ship13.webp",
+  twin: "/assets/webp.sprites/tiny_ship1.webp",
 };
-const powerUpSprite = "/assets/sprites/bonus_time.png";
-const playerBulletSprite = "/assets/sprites/laser-3.png";
-const enemyBulletSprite = "/assets/sprites/laser-2.png";
+const powerUpSprite = "/assets/webp.sprites/bonus_time.webp";
+const playerBulletSprite = "/assets/webp.sprites/laser-3.webp";
+const enemyBulletSprite = "/assets/webp.sprites/laser-2.webp";
 
 const playerExplosionFrames = Array.from(
   { length: 10 },
-  (_, i) => `/assets/sprites/player-explosion/frame-${i + 1}.png`
+  (_, i) => `/assets/webp.sprites/player-explosion/frame-${i + 1}.webp`
 );
 
 const enemyExplosionFrames = Array.from(
   { length: 6 },
-  (_, i) => `/assets/sprites/enemy-explosion/frame-${i + 1}.png`
+  (_, i) => `/assets/sprites/enemy-explosion/frame-${i + 1}.webp`
 );
 
 
@@ -157,7 +157,6 @@ function AboutMiniGame({ exitGame }) {
       }
     }, 80); 
   };
-
 
   // Move player bullets upward
   useEffect(() => {
@@ -436,7 +435,13 @@ function AboutMiniGame({ exitGame }) {
         <div className="start-menu">
           <h2>Shoot as many enemies as you can before they destroy you!</h2>
           <div className ="menu-buttons">
-          <h2>Controls: A + D or ⬅➡ to move... Spacebar to shoot</h2>
+          <h4>
+            <div classname="menu-instruct">
+            <p>Controls:</p>
+            <p>A + D or ⬅➡ to move</p>
+            <p>Spacebar to shoot</p>
+            </div>
+          </h4>
           </div>
           <button onClick={() => setGameStarted(true)}>Start</button>
         </div>

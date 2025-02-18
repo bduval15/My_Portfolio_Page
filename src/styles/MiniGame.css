@@ -27,6 +27,8 @@ body {
   width: var(--game-width);
   height: var(--game-height);
   background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  border: 2px solid #ff0080;
   z-index: 9999;
   overflow: hidden;
 }
@@ -136,7 +138,8 @@ body {
 .start-menu h2 {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  overflow: auto;
+  max-width: 30vw;
+
 }
 .start-menu button {
   padding: 10px 20px;
@@ -156,7 +159,7 @@ body {
 
 .bullet, .enemy-bullet {
   position: absolute;
-  width: 20px;  /* Adjust size based on actual PNG */
+  width: 20px;  
   height: 40px;
 }
 
@@ -198,4 +201,9 @@ body {
   cursor: pointer;
   transition: 0.3s;
   color: #ff0080;
+}
+
+.menu-instruct h4 {
+  padding: 20px;
+  margin-bottom: 50px;
 }

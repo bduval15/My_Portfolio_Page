@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import WebAppCarousel from "../components/WebsiteCarousel";
 import MusicPlayer from "../components/MusicPlayer";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MiniGame from "../components/MiniGame";
@@ -19,15 +18,15 @@ import "../styles/Contact.css";
 const soundDesignVideos = ["Find_You", "Iwaly"];
 
 const musicTracks = [
-  { title: "After Hours", cover: "/assets/pictures/After_Hours.png", audio: "/assets/audio/AfterHours.mp3" },
-  { title: "Midnight Flights", cover: "/assets/pictures/Midnight_Flights_Cover.png", audio: "/assets/audio/MidnightFlights.mp3" },
-  { title: "Twelve Thirty Four", cover: "/assets/pictures/1234_cover.png", audio: "/assets/audio/1234.mp3" },
-  { title: "Running Out of Time", cover: "/assets/pictures/running_out_of_time_cover.png", audio: "/assets/audio/Running.mp3" },
-  { title: "Warp Drive", cover: "/assets/pictures/Warp_Drive_cover.png", audio: "/assets/audio/WarpDrive.mp3" },
-  { title: "Until Next Time", cover: "/assets/pictures/until_next_time_cover.png", audio: "/assets/audio/NextTime.mp3" },
-  { title: "Find You", cover: "/assets/pictures/Find_you_cover.png", audio: "/assets/audio/FindYou.mp3" },
-  { title: "5 AM", cover: "/assets/pictures/5_am_cover.png", audio: "/assets/audio/5AM.mp3" },
-  { title: "I Will Always Love You", cover: "/assets/pictures/IWALY_Cover.png", audio: "/assets/audio/IWALY.mp3" },
+  { title: "After Hours", cover: "/assets/webp.pictures/After_Hours.webp", audio: "/assets/audio/AfterHours.mp3" },
+  { title: "Midnight Flights", cover: "/assets/webp.pictures/Midnight_Flights_Cover.webp", audio: "/assets/audio/MidnightFlights.mp3" },
+  { title: "Twelve Thirty Four", cover: "/assets/webp.pictures/1234_cover.webp", audio: "/assets/audio/1234.mp3" },
+  { title: "Running Out of Time", cover: "/assets/webp.pictures/running_out_of_time_cover.webp", audio: "/assets/audio/Running.mp3" },
+  { title: "Warp Drive", cover: "/assets/webp.pictures/Warp_Drive_cover.webp", audio: "/assets/audio/WarpDrive.mp3" },
+  { title: "Until Next Time", cover: "/assets/webp.pictures/until_next_time_cover.webp", audio: "/assets/audio/NextTime.mp3" },
+  { title: "Find You", cover: "/assets/webp.pictures/Find_you_cover.webp", audio: "/assets/audio/FindYou.mp3" },
+  { title: "5 AM", cover: "/assets/webp.pictures/5_am_cover.webp", audio: "/assets/audio/5AM.mp3" },
+  { title: "I Will Always Love You", cover: "/assets/webp.pictures/IWALY_Cover.webp", audio: "/assets/audio/IWALY.mp3" },
 ];
 
 function PortfolioPage() {
