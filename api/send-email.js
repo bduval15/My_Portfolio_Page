@@ -9,14 +9,13 @@ export default async function handler(req, res) {
 
   try {
     let transporter = nodemailer.createTransport({
-      service: "gmail", 
+      service: "outlook", 
       auth: {
         user: process.env.EMAIL_USER, 
         pass: process.env.EMAIL_PASS, 
       },
     });
 
-    // Send the email
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
       to: process.env.EMAIL_USER,    
