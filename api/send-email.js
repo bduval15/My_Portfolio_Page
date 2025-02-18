@@ -5,24 +5,30 @@ export default async function handler(req, res) {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ message: "Method Not Allowed" });
   }
+  
   const { name, email, message } = req.body;
-
+  
   try {
     let transporter = nodemailer.createTransport({
-      service: "outlook", 
+      host: "smtp.office365.com",
+      port: 587,
+      secure: false,
       auth: {
-        user: process.env.EMAIL_USER, 
-        pass: process.env.EMAIL_PASS, 
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
+      tls: {
+        ciphers: "SSLv3"
+      }
     });
-
+    
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_USER,    
+      to: process.env.EMAIL_USER,
       subject: "New Contact Form Message",
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
     });
-
+    
     return res.status(200).json({ success: true, message: "Mail sent successfully!" });
   } catch (error) {
     console.error("Error sending email:", error);

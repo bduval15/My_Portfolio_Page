@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "nodemailer": "^6.10.0",
     "nth-check": "^2.1.1",
     "postcss": "^8.5.1",
     "react": "^19.0.0",
