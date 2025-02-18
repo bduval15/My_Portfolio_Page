@@ -40,7 +40,7 @@ function PortfolioPage() {
 
   useEffect(() => {
     const title = "Braeden Duval";
-    const subtitle = "Software Developer & Audio Engineer";
+    const subtitle = "Programmer & Audio Engineer";
 
     let titleIndex = 0;
     let subtitleIndex = 0;
@@ -128,14 +128,18 @@ function PortfolioPage() {
                 <div className="about-content">
                   <div className="description-box-about">
                     <p>
-                      I'm Braeden Duval, a passionate Software Developer & Audio Engineer.
-                      I specialize in creating dynamic web applications, music production,
-                      and sound design for various media projects.
+                    In a world full of vast opportunities, I’ve always been driven by a desire to pursue my passions and find new ways to grow. 
+                    <p>After leaving Alberta to follow my passion for music, I dedicated myself to developing my skills and immersing myself in the creative process.</p>
+                    Music became an important outlet, allowing me to connect with my emotions and escape the pressures of daily life. 
+                    However, after reflecting on my journey, I realized that I wanted to combine my love for music with technology and game development. 
+                    This led me to pivot and pursue a new path that merges both my creative and technical interests.
                     </p>
                     <p>
-                      My goal is to build immersive user experiences through technology
-                      and creativity, bringing interactive applications and audio-driven
-                      content to life.
+                    Currently, I’m pursuing a Computer Systems Technology Diploma at BCIT, where I’m building a solid foundation in software development and technology. 
+                    Through my studies, I’ve learned how to combine creativity with problem-solving, from developing web applications to creating interactive experiences. 
+                    This journey allows me to merge my passion for music and gaming with technology, whether it’s building applications that showcase my creative projects or 
+                    designing immersive experiences that blend my technical skills with my love for games. 
+                    I’m excited to see how my diverse interests continue to shape the work I do.
                     </p>
                   </div>
                 </div>
@@ -157,21 +161,19 @@ function PortfolioPage() {
           )}
 
           {activeTab === "sound" && (
-            <section className="demo-section">
-              <div className="video-section">
-                <h3 className="carousel-title"></h3>
-                <Slider {...sliderSettings} className="video-carousel">
-                  {soundDesignVideos.map((video) => (
-                    <div className="video-wrapper" key={video}>
-                      <video className="carousel-video" controls>
-                        <source src={`/assets/videos/${video}.mp4`} type="video/mp4" />
-                      </video>
-                    </div>
-                  ))}
-                </Slider>
+            <section className="demo-section-sound">
+              <div className="sound-wrapper">
+                <div className="sound-header">
+                  <p>Coming Soon!</p>
+                </div>
+                <video className="profile-video" controls>
+                  <source src="/assets/videos/Long_Term.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </section>
           )}
+
 
           {activeTab === "games" && (
             (gameStarted ? (
@@ -196,7 +198,7 @@ function PortfolioPage() {
 
           {activeTab === "contact" && (
             <section className="demo-section-contact">
-              <Contact/>
+              <Contact />
             </section>
           )}
         </div>

@@ -20,7 +20,7 @@ const playerExplosionFrames = Array.from(
 );
 
 const enemyExplosionFrames = Array.from(
-  { length: 5 },
+  { length: 6 },
   (_, i) => `/assets/sprites/enemy-explosion/frame-${i + 1}.png`
 );
 
@@ -36,7 +36,7 @@ const enemySizes = {
 
 // DYNAMIC ENEMY MOVEMENT CONFIGS
 const enemyMovementConfigs = {
-  basic: { speed: 4, amplitude: 70, frequency: 0.1 },
+  basic: { speed: 4, amplitude: 70, frequency: 0.13 },
   fast: { speed: 7, amplitude: 40, frequency: 0.1 },
   agile: { speed: 5, amplitude: 30, frequency: 0.15 },
   heavy: { speed: 3, amplitude: 10, frequency: 0.12 },
@@ -133,7 +133,7 @@ function AboutMiniGame({ exitGame }) {
 
   // Explosions
   const triggerExplosion = (x, y, type) => {
-    const totalFrames = type === "player" ? 10 : 5;
+    const totalFrames = type === "player" ? 10 : 6;
     const explosionId = Math.random();
 
     setExplosions((prev) => [...prev, { id: explosionId, x, y, type, frame: 0 }]);
@@ -280,7 +280,7 @@ function AboutMiniGame({ exitGame }) {
     return () => clearInterval(interval);
   }, [gameStarted]);
 
-  // Enemy shooting – enemies with canShoot fire bullets every 1200ms.
+  // Enemy shooting – enemies with canShoot fire bullets every 1200ms
   useEffect(() => {
     if (!gameStarted) return;
     const interval = setInterval(() => {
@@ -298,7 +298,7 @@ function AboutMiniGame({ exitGame }) {
     return () => clearInterval(interval);
   }, [gameStarted, gameOver]);
 
-  // Move enemy bullets downward.
+  // Move enemy bullets downward
   useEffect(() => {
     if (!gameStarted) return;
     const interval = setInterval(() => {
@@ -325,7 +325,7 @@ function AboutMiniGame({ exitGame }) {
     return () => clearInterval(interval);
   }, [gameStarted, containerWidth, gameOver]);
 
-  // Move power-ups downward.
+  // Move power-ups downward
   useEffect(() => {
     if (!gameStarted) return;
     const interval = setInterval(() => {
@@ -342,7 +342,7 @@ function AboutMiniGame({ exitGame }) {
   useEffect(() => {
     if (!gameStarted) return;
 
-    // Player bullets vs. enemies.
+    // Player bullets vs. enemies
     setEnemies((prev) =>
       prev.filter((enemy) => {
         const eWidth = enemy.width || 40;
@@ -385,7 +385,7 @@ function AboutMiniGame({ exitGame }) {
       })
     );
 
-    // Power-ups vs. spaceship (collection)
+    // Power-ups vs. spaceship (collecting)
     setPowerUps((prev) =>
       prev.filter((p) => {
         const shipLeft = spaceshipX;
@@ -435,6 +435,9 @@ function AboutMiniGame({ exitGame }) {
       {!gameStarted && (
         <div className="start-menu">
           <h2>Shoot as many enemies as you can before they destroy you!</h2>
+          <div className ="menu-buttons">
+          <h2>Controls: A + D or ⬅➡ to move... Spacebar to shoot</h2>
+          </div>
           <button onClick={() => setGameStarted(true)}>Start</button>
         </div>
       )}
@@ -461,7 +464,7 @@ function AboutMiniGame({ exitGame }) {
           )}
 
 
-          {/* Player Bullets (Using PNG Sprite) */}
+          {/* Player Bullets */}
           {bullets.map((b, i) => (
             <img key={i} className="bullet" src={playerBulletSprite} alt="Player Bullet" style={{ left: b.x, top: b.y }} />
           ))}

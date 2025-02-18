@@ -48,23 +48,23 @@ function WebAppCarousel() {
     <div className="webapp-align" key="naruto">
       <div className="webapp-wrapper-2">
         <div className="description-box-2">
-          <h2 className="description-title">Naruto Fan Page</h2>
-          <p className="description-text">
-            The Naruto Fan Page is a web application designed to showcase an interactive UI inspired by the world of Naruto.
+          <h2 className="description-title-2">Naruto Fan Page</h2>
+          <p className="description-text-2">
+            <strong>Naruto Fan Page</strong> is a web application designed to showcase an interactive UI inspired by the world of Naruto.
           </p>
-          <p className="description-text"><strong>Key Features:</strong></p>
-          <ul className="description-text">
+          <p className="description-text-2"><strong>Key Features:</strong></p>
+          <ul className="description-text-2">
             <li><strong>Dynamic Image Carousel</strong> – The main banner cycles through four different Naruto-themed images.</li>
             <li><strong>Dynamic Menus</strong> – Interactive dropdown menus populate automatically for smooth navigation.</li>
             <li><strong>Article Modals</strong> – Clicking "More Details" on any article opens a modal, allowing users to read the full content.</li>
           </ul>
-          <p className="description-text"><strong>Technologies Used:</strong></p>
-          <ul className="description-text">
+          <p className="description-text-2"><strong>Technologies Used:</strong></p>
+          <ul className="description-text-2">
             <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript</li>
             <li><strong>Backend:</strong> Originally built with Node.js and MySQL, later transitioned to a Vercel-compatible backend</li>
             <li><strong>Development Tools:</strong> Visual Studio Code</li>
           </ul>
-          <p className="description-text">
+          <p className="description-text-2">
             This fan page serves as a design showcase, emphasizing modern web layouts, interactive features,
             and smooth navigation for an engaging user experience.
           </p>

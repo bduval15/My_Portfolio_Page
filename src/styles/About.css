@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1.2rem; 
-  margin-top: 20vh;
+  margin-top: 5vh;
   height: 100%;
 }
 
@@ -39,7 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(15, 14, 23, 0.9);
+  background: rgba(255, 255, 255, 0);
   border: 2px solid #ff0080;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
@@ -51,7 +51,7 @@
   Description Box (Inside Main Container)
 ****************************************/
 .description-box-about {
-  background-color: rgba(26, 26, 26, 0.85);
+  background-color: rgba(255, 255, 255, 0);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(255, 0, 128, 0.2);

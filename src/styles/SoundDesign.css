@@ -1,45 +1,72 @@
-/******************************************************
- * SOUND DESIGN CAROUSEL
- ******************************************************/
+/****************************************
+  Sound Design Section Container
+****************************************/
+.demo-section-sound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: clear;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 20vh auto; 
+}
 
- .video-section {
-    width: 85%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .video-carousel {
-    width: 90%;
-    max-width: 700px;
-    margin: 20px auto;
-  }
-  
-  .video-wrapper {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    overflow: hidden;
-    border-radius: 10px;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .carousel-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  
-  .carousel-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #00ffff;
-    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
-    animation: neonPulse 3s infinite ease-in-out;
-  }
+/****************************************
+  Wrapper for text + picture
+****************************************/
+.sound-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/****************************************
+  Header (Holds "Coming Soon!" text)
+****************************************/
+.sound-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Style for the "Coming Soon!" text */
+.sound-header p {
+  font-size: 2rem;
+  color: #ff0080;
+  text-shadow: 0 0 5px #ff0080, 0 0 15px #ff0080;
+  margin: 0;
+}
+
+/****************************************
+  Additional Paragraph Below Header
+****************************************/
+.sound-wrapper p {
+  margin: 0.5rem 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.profile-video {
+  width: 100%;
+  max-width: 400px; 
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0px auto;
+}
+
+.sound-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sound-header p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
