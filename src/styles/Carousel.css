@@ -29,7 +29,7 @@
   position: absolute;
   bottom: 57%;
   background: transparent;
-  color: #ff0080;
+  color: #f3f3f3;
   font-size: 2rem;
   border: none;
   cursor: pointer;
@@ -38,7 +38,7 @@
 }
 
 .carousel-btn:hover {
-  color: #00ffff;
+  color: #ff0080;
 }
 
 /* Left & Right Button Positions */
