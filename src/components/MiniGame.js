@@ -10,6 +10,7 @@ const enemySprites = {
   heavy: "/assets/webp.sprites/tiny_ship13.webp",
   twin: "/assets/webp.sprites/tiny_ship1.webp",
 };
+
 const powerUpSprite = "/assets/webp.sprites/bonus_time.webp";
 const playerBulletSprite = "/assets/webp.sprites/laser-3.webp";
 const enemyBulletSprite = "/assets/webp.sprites/laser-2.webp";
@@ -21,7 +22,7 @@ const playerExplosionFrames = Array.from(
 
 const enemyExplosionFrames = Array.from(
   { length: 6 },
-  (_, i) => `/assets/sprites/enemy-explosion/frame-${i + 1}.webp`
+  (_, i) => `/assets/webp.sprites/enemy-explosion/frame-${i + 1}.webp`
 );
 
 

@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
   background: clear;
   padding: 1rem 2rem;
   border-radius: 10px;
@@ -52,7 +52,7 @@
 ****************************************/
 .description-box-about {
   background-color: rgba(255, 255, 255, 0);
-  padding: 1.5rem;
+  padding: 1.1rem;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(255, 0, 128, 0.2);
   color: #ffffff;

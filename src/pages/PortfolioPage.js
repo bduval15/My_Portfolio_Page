@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 
 import WebAppCarousel from "../components/WebsiteCarousel";
 import MusicPlayer from "../components/MusicPlayer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MiniGame from "../components/MiniGame";
 import Contact from "../components/Contact";
 
 import "../styles/globals.css";
@@ -15,7 +14,7 @@ import "../styles/About.css";
 import "../styles/Games.css";
 import "../styles/Contact.css";
 
-const soundDesignVideos = ["Find_You", "Iwaly"];
+const MiniGame = React.lazy(() => import ("../components/MiniGame"));
 
 const musicTracks = [
   { title: "After Hours", cover: "/assets/webp.pictures/After_Hours.webp", audio: "/assets/audio/AfterHours.mp3" },
@@ -129,11 +128,12 @@ function PortfolioPage() {
                     <p>
                     In a world full of vast opportunities, I’ve always been driven by a desire to pursue my passions and find new ways to grow. 
                     <p>After leaving Alberta to follow my passion for music, I dedicated myself to developing my skills and immersing myself in the creative process.</p>
+                    <br></br>
                     Music became an important outlet, allowing me to connect with my emotions and escape the pressures of daily life. 
                     However, after reflecting on my journey, I realized that I wanted to combine my love for music with technology and game development. 
                     This led me to pivot and pursue a new path that merges both my creative and technical interests.
                     </p>
-                    <p></p>
+                    <br></br>
                     <p>
                     Currently, I’m pursuing a Computer Systems Technology Diploma at BCIT, where I’m building a solid foundation in software development and technology. 
                     Through my studies, I’ve learned how to combine creativity with problem-solving, from developing web applications to creating interactive experiences. 
@@ -177,8 +177,10 @@ function PortfolioPage() {
 
           {activeTab === "games" && (
             (gameStarted ? (
+              <Suspense fallback ={<div>Loading...</div>}>
               <MiniGame exitGame={() => setGameStarted(false)} />
-            ) :
+              </Suspense>
+            ) : 
               <section className="demo-section-games">
                 <div className="games-wrapper">
                   <div className="games-header">
